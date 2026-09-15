@@ -1,0 +1,34 @@
+{
+  "scope": "Archived individual runs, not current ablation results or averages.",
+  "million_agent_run": {
+    "N": 1000000,
+    "success": true,
+    "final_at_goal": 1000000,
+    "end_to_end_wall_s": 994.9267744869867,
+    "euclidean_soc_per_agent": 675.216092942167,
+    "executed_euclidean_soc": 675216092.942167,
+    "repair_attempted": false,
+    "vertex_conflicts": 0,
+    "edge_conflicts": 0,
+    "obstacle_occupancy_violations": 0,
+    "peak_process_tree_rss_gib": 39.819732666015625,
+    "peak_gpu_memory_mib": 1440
+  },
+  "video_planning": {
+    "agents": 100000,
+    "online_planning_s": 900.1449278519722,
+    "repair_planning_s": 8.463743987987982,
+    "planning_time_s": 908.6086718399602,
+    "repair_fraction": 0.009315059662427218,
+    "timing_definition": "Eight online solver method_wall_s values plus Residual-SIPP solver wall_s; all video/data processing is excluded.",
+    "excluded_operations": [
+      "subprocess startup",
+      "trajectory serialization",
+      "frame audit and assembly",
+      "Blender rendering",
+      "video encoding",
+      "0.5-second annotation and statistics generation"
+    ]
+  },
+  "collision_scope": "Discrete vertex, edge-swap and obstacle occupancy checks; not continuous-body clearance."
+}

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anonymous supplementary material for learning-guided multi-agent path finding.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><meta name="referrer" content="no-referrer"><meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex"><meta name="author" content="Anonymous Authors"><meta name="theme-color" content="#f4f7f6">
+  <meta property="og:title" content="Large-Scale 3D MAPF">
+  <meta property="og:description" content="Anonymous supplementary material for learning-guided multi-agent path finding.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-poster.webp">
+  <title>Large-Scale 3D MAPF | Anonymous Supplement</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/lucide.min.js"></script>
+  <script defer src="site.js"></script>
+<link rel="stylesheet" href="anonymous.css"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" data-site-header="">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Anonymous supplement home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>3D MAPF</span>
+      </a>
+
+      <button class="icon-button nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle="" title="Menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation" data-site-nav="">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#visuals">Visuals</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <video class="hero-media" id="hero-video" autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="assets/hero-poster.webp">
+        <source src="assets/execution-100k.mp4" type="video/mp4">
+      </source></video>
+      <div class="hero-wash" aria-hidden="true"></div>
+
+      <div class="hero-content page-shell">
+        <p class="eyebrow">Anonymous supplementary material</p>
+        <h1 id="hero-title">Large-Scale 3D MAPF</h1>
+        <p class="hero-subtitle">Global context. Local coordination.</p><p class="anonymous-authors">Anonymous Authors</p>
+        <p class="hero-summary">Learning-guided candidate ordering for large-scale multi-agent path finding, with discrete conflict handling performed by the PIBT executor.</p>
+
+        <div class="hero-actions" aria-label="Project links">
+
+          <a class="button button-secondary" href="#visuals">
+            <i data-lucide="play" aria-hidden="true"></i>
+            <span>Watch execution</span>
+          </a>
+          <a class="text-link" href="#results">
+            <span>Explore results</span>
+            <i data-lucide="arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <dl class="hero-metrics" aria-label="Headline audited results">
+          <div>
+            <dt>Agents</dt>
+            <dd>1,000,000</dd>
+          </div>
+          <div>
+            <dt>Completion</dt>
+            <dd>100%</dd>
+          </div>
+          <div>
+            <dt>Audited collisions</dt>
+            <dd>0</dd>
+          </div>
+        </dl>
+      </div>
+
+      <p class="hero-caption">Background: exact 100,000-agent 3D warehouse execution</p>
+      <button class="icon-button media-control" type="button" aria-label="Pause background video" data-video-toggle="" title="Pause video">
+        <i data-lucide="pause" aria-hidden="true"></i>
+      </button>
+    </section>
+
+    <section class="section abstract-section" id="overview">
+      <div class="page-shell abstract-layout">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2>Learning global traffic while keeping PIBT in control.</h2>
+        </div>
+        <div class="abstract-copy">
+          <p>
+            City-scale UAV fleets require three-dimensional coordination beyond repeated joint-state
+            search. PIBT is efficient online, but its one-step distance ordering is myopic when remote
+            populations converge on the same bottleneck. the proposed method augments the executor with a
+            guarded neural residual: message-aware graph attention models nearby interactions, while
+            fixed-grid rectified-flow tokens summarize global source-to-goal transport.
+          </p>
+          <p>
+            The fused representation scores PIBT's 27 native 3D candidates. A regret bound and an
+            execution-aligned counterfactual gate restrict intervention, so priority inheritance,
+            claims, backtracking, and anti-swap checks remain responsible for every final action.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="page-shell">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Method</p>
+            <h2>Global context, local decisions, discrete guarantees.</h2>
+          </div>
+          <p class="section-lede">
+            The learned module changes candidate order only. PIBT still resolves the joint action.
+          </p>
+        </div>
+
+        <figure class="architecture-figure reveal">
+          <img src="assets/architecture.png" alt="the proposed method architecture from 3D MAPF state through global-local encoder, candidate evaluator, guarded residual, and PIBT executor." loading="lazy">
+          <figcaption>Online policy, executor-aligned supervision, and the large-scale deployment path.</figcaption>
+        </figure>
+
+        <div class="contribution-grid">
+          <article class="contribution reveal">
+            <span class="contribution-index">01</span>
+            <i data-lucide="network" aria-hidden="true"></i>
+            <h3>Rectified-flow transport tokens</h3>
+            <p>Fixed-grid tokens model long-range source-to-goal traffic with global self-attention and flow-matching supervision.</p>
+          </article>
+          <article class="contribution reveal">
+            <span class="contribution-index">02</span>
+            <i data-lucide="git-merge" aria-hidden="true"></i>
+            <h3>Two-stage cross-attention</h3>
+            <p>Local GAT features read the global flow field, then fused agent features attend to PIBT's 27 candidate actions.</p>
+          </article>
+          <article class="contribution reveal">
+            <span class="contribution-index">03</span>
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <h3>Executor-aligned intervention</h3>
+            <p>Counterfactual rollout labels, bounded regret, adaptive grouping, and selective repair keep learning tied to executable outcomes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section million-section" id="results">
+      <div class="page-shell">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Audited scale</p>
+            <h2>One million agents. One complete 3D run.</h2>
+          </div>
+          <p class="section-lede">Archived single-run measurements; not an aggregate or a current ablation result.</p>
+        </div>
+
+        <div class="million-layout">
+          <div class="million-visual reveal">
+            <div class="segmented-control" role="tablist" aria-label="Million-agent visualization">
+              <button type="button" role="tab" aria-selected="true" data-million-view="global">Global state</button>
+              <button type="button" role="tab" aria-selected="false" data-million-view="local">Local motion</button>
+            </div>
+            <button class="image-button" type="button" data-lightbox-src="assets/million-global.webp" data-lightbox-alt="One-million-agent global 3D state with a marked local region." aria-label="Open one-million-agent global visualization">
+              <img id="million-image" src="assets/million-global.webp" alt="One-million-agent global 3D state with a marked local region." loading="lazy">
+            </button>
+            <p class="figure-caption" id="million-caption">Exact global state; every cyan point is one occupied agent voxel.</p>
+          </div>
+
+          <div class="metric-panel reveal" aria-label="One-million-agent metrics">
+            <div class="metric-emphasis">
+              <span>Completed</span>
+              <strong>1,000,000 / 1,000,000</strong>
+            </div>
+            <dl class="metric-list">
+              <div><dt>End-to-end wall time</dt><dd>994.927 s</dd></div>
+              <div><dt>Euclidean SOC</dt><dd>675,216,092.942</dd></div>
+              <div><dt>SOC per agent</dt><dd>675.216</dd></div>
+              <div><dt>Peak process memory</dt><dd>39.82 GiB</dd></div>
+              <div><dt>Peak GPU memory</dt><dd>1.41 GiB</dd></div>
+              <div><dt>Tail repair</dt><dd>Not triggered</dd></div>
+              <div><dt>Vertex / edge / obstacle</dt><dd>0 / 0 / 0</dd></div>
+            </dl>
+            <a class="inline-link" href="evidence.json" download="evidence.json">Recorded run metrics</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section video-section" id="visuals">
+      <div class="page-shell">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Execution</p>
+            <h2>Exact 100K warehouse playback.</h2>
+          </div>
+          <p class="section-lede">Thirty seconds of compressed playback from saved, collision-audited solver states.</p>
+        </div>
+
+        <div class="video-layout">
+          <div class="video-frame reveal">
+            <video controls="" muted="" loop="" playsinline="" preload="metadata" poster="assets/hero-poster.webp">
+              <source src="assets/execution-100k.mp4" type="video/mp4">
+            </source></video>
+          </div>
+          <div class="video-facts reveal">
+            <dl>
+              <div><dt>Final arrival</dt><dd>100,000 / 100,000</dd></div>
+              <div><dt>Planning wall time</dt><dd>908.609 s</dd></div>
+              <div><dt>Repair wall time</dt><dd>8.464 s</dd></div>
+              <div><dt>Repair share</dt><dd>0.93%</dd></div>
+              <div><dt>Saved execution step</dt><dd>17,558</dd></div>
+              <div><dt>Collision audit</dt><dd>Passed</dd></div>
+            </dl>
+
+            <p>Arrival counts are sampled every 0.5 s of playback; planning time excludes video processing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" aria-labelledby="gallery-title">
+      <div class="page-shell">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Visual evidence</p>
+            <h2 id="gallery-title">From global traffic to local motion.</h2>
+          </div>
+          <p class="section-lede">Each view is rendered from saved solver coordinates, with no generative imagery.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide reveal">
+            <button class="image-button" type="button" data-lightbox-src="assets/warehouse-global.webp" data-lightbox-alt="Global 100,000-agent 3D warehouse state with a marked local region.">
+              <img src="assets/warehouse-global.webp" alt="Global 100,000-agent 3D warehouse state with a marked local region." loading="lazy">
+            </button>
+            <figcaption><strong>100K warehouse</strong><span>Global state and exact ROI</span></figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <button class="image-button" type="button" data-lightbox-src="assets/warehouse-local.webp" data-lightbox-alt="Local 100,000-agent warehouse slice with hummingbird meshes and next-step arrows.">
+              <img src="assets/warehouse-local.webp" alt="Local 100,000-agent warehouse slice with hummingbird meshes and next-step arrows." loading="lazy">
+            </button>
+            <figcaption><strong>Local action field</strong><span>Exact next-step directions</span></figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <button class="image-button" type="button" data-lightbox-src="assets/million-local.webp" data-lightbox-alt="Local slice from the one-million-agent city run.">
+              <img src="assets/million-local.webp" alt="Local slice from the one-million-agent city run." loading="lazy">
+            </button>
+            <figcaption><strong>1M city slice</strong><span>346 of 347 agents moving</span></figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <button class="image-button" type="button" data-lightbox-src="assets/maze-100k.webp" data-lightbox-alt="Global and local midpoint views of a 100,000-agent maze run.">
+              <img src="assets/maze-100k.webp" alt="Global and local midpoint views of a 100,000-agent maze run." loading="lazy">
+            </button>
+            <figcaption><strong>100K maze</strong><span>Exact midpoint state</span></figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide reveal">
+            <button class="image-button" type="button" data-lightbox-src="assets/gates-100k.webp" data-lightbox-alt="Oblique view of 100,000 agents moving through 3D gate walls.">
+              <img src="assets/gates-100k.webp" alt="Oblique view of 100,000 agents moving through 3D gate walls." loading="lazy">
+            </button>
+            <figcaption><strong>3D gate walls</strong><span>Cross-scene obstacle transfer</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence">
+      <div class="page-shell evidence-layout">
+        <div>
+          <p class="eyebrow">Reproducibility</p>
+          <h2>Evidence travels with the result.</h2>
+        </div>
+        <div>
+          <p>The demonstrations use saved solver states, not generated imagery. The records below describe archived individual runs, separate from ongoing ablation experiments. Discrete collision checks are not a continuous-body safety proof.</p>
+          <div class="evidence-links">
+            <a class="button button-primary" href="evidence.json" download="evidence.json">Recorded run metrics</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-layout">
+      <p>Large-Scale 3D MAPF</p>
+      <p>Anonymous supplementary material</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" data-lightbox="" aria-label="Expanded figure">
+    <button class="icon-button lightbox-close" type="button" aria-label="Close expanded figure" data-lightbox-close="" title="Close">
+      <i data-lucide="x" aria-hidden="true"></i>
+    </button>
+    <img src="" alt="" data-lightbox-image="">
+  </dialog>
+</body>
+</html>

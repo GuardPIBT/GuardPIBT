@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.*
+*.log
+*.pem
+*.key
+id_ed25519*
+id_rsa*

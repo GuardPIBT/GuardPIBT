@@ -1,0 +1,105 @@
+.anonymous-authors {
+  margin: 12px 0 0;
+  color: #46595d;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.hero h1 {
+  max-width: 800px;
+  font-size: 60px;
+  line-height: 1.06;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+}
+
+.hero-summary {
+  max-width: 630px;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: 600px;
+    height: auto;
+    max-height: none;
+    padding-top: 105px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    max-width: 400px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+
+  .anonymous-authors {
+    font-size: 15px;
+  }
+
+  .hero-actions .text-link {
+    width: auto;
+  }
+
+  .hero-metrics {
+    margin-top: 25px;
+  }
+
+  .hero-content {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-height: 740px) and (min-width: 681px) {
+  .hero {
+    min-height: 0;
+    height: auto;
+    padding-top: 110px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-content {
+    padding-bottom: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    padding-top: 85px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .hero-summary {
+    font-size: 14px;
+  }
+
+  .hero-actions .button,
+  .hero-actions .text-link {
+    font-size: 13px;
+  }
+
+  .hero-actions .button {
+    padding: 0 12px;
+  }
+
+  .hero-actions .text-link {
+    padding: 0;
+  }
+
+  .hero-content {
+    padding-bottom: 48px;
+  }
+}
