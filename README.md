@@ -2,7 +2,7 @@
 
 Anonymous supplementary material. Authors and affiliations are intentionally omitted.
 
-The self-contained website is in `site/`. It includes recorded execution videos,
+The self-contained website starts at the root `index.html`. It includes recorded execution videos,
 scene visualizations, and archived single-run metrics. Images and video frames
 have not been generated or modified for anonymization.
 
@@ -12,11 +12,17 @@ After enabling GitHub Pages, the project URL is:
 
 https://guardpibt.github.io/GuardPIBT/
 
-Under **Settings > Pages > Build and deployment**, select **GitHub Actions**.
-Run **Publish anonymous website** from the Actions tab if the initial workflow
-ran before Pages was enabled. Subsequent pushes to `main` publish automatically.
+Under **Settings > Pages > Build and deployment**, use:
 
-The deployment uploads only `site/`, not repository metadata or build tooling.
+- Source: **Deploy from a branch**
+- Branch: **main**
+- Folder: **/(root)**
+
+Subsequent pushes to `main` publish automatically. The root `.nojekyll` marker
+serves the existing HTML and media without converting this README into a homepage.
+There is no separate custom deployment workflow competing with branch publication.
+
+This repository contains only the anonymous website and its publishing notes.
 The website has no third-party resource requests or analytics. Search indexing
 is discouraged with page metadata, but this is a public site, not access control.
 
