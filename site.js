@@ -1,193 +1,70 @@
 (() => {
-  const qs = (selector, root = document) => root.querySelector(selector);
-  const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
-
-  const refreshIcons = () => {
-    if (window.lucide) {
-      window.lucide.createIcons({ attrs: { "aria-hidden": "true" } });
-    }
+  const $ = (id) => document.getElementById(id);
+  const replay = $('replay'), image = $('scene-image'), hero = $('hero-video');
+  const scenes = {
+    warehouse: { global: 'warehouse-replay.mp4', local: 'warehouse-local.webp', video: true,
+      caption: '100,000 recorded agent positions per frame. Teal includes both moving and arrived agents. The vertical display scale is exaggerated 5× relative to the horizontal scale. This is a 30 s time-compressed replay, not real-time flight.',
+      localCaption: 'Recorded 100k warehouse state at step 301, selected layer. Original ROS mesh at 0.45 relative scale; blue arrows show recorded next-step directions. This is a static snapshot, separate from the playback clock.' },
+    city: { global: 'city-global.webp', local: 'city-local.webp', caption: '1,000,000 exact recorded positions at step 219. Display-height scaling is preserved from the archived render. This is a static snapshot, not an execution video.', localCaption: 'Selected-layer close-up from the same million-agent state. Original ROS meshes at 0.45 relative scale and recorded next-step arrows. Robot meshes and display scaling are not physical clearance guarantees.' },
+    maze: { global: 'maze.webp', local: null, caption: 'Archived 100k maze midpoint with its corresponding local view. Obstacles and agent coordinates come from the recorded map and solver state. This is a static snapshot.' },
+    throat: { global: 'throat-global.webp', local: 'throat-local.webp', caption: '10,000-agent 3D bottleneck: exact archived state at solver step 19,467, with 5,000 agents at goal. Blue and orange distinguish arrived and unresolved agents in this source render. This state is in the repair phase; not a new performance result.', localCaption: 'Local view of the same 10k bottleneck state. Mesh size and yaw are display conventions; yaw points toward goals and is not a recorded next-step command.' }
   };
-
-  const header = qs("[data-site-header]");
-  const nav = qs("[data-site-nav]");
-  const navToggle = qs("[data-nav-toggle]");
-
-  const closeNav = () => {
-    if (!nav || !navToggle) return;
-    nav.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open navigation");
-    navToggle.innerHTML = '<i data-lucide="menu" aria-hidden="true"></i>';
-    document.body.classList.remove("nav-open");
-    refreshIcons();
-  };
-
-  navToggle?.addEventListener("click", () => {
-    const opening = !nav.classList.contains("is-open");
-    nav.classList.toggle("is-open", opening);
-    navToggle.setAttribute("aria-expanded", String(opening));
-    navToggle.setAttribute("aria-label", opening ? "Close navigation" : "Open navigation");
-    navToggle.innerHTML = `<i data-lucide="${opening ? "x" : "menu"}" aria-hidden="true"></i>`;
-    document.body.classList.toggle("nav-open", opening);
-    refreshIcons();
-  });
-
-  qsa("a[href^='#']", nav || document).forEach((link) => link.addEventListener("click", closeNav));
-
-  const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 18);
-  updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
-
-  const heroVideo = qs("#hero-video");
-  const videoToggle = qs("[data-video-toggle]");
-  const updateVideoButton = () => {
-    if (!heroVideo || !videoToggle) return;
-    const paused = heroVideo.paused;
-    videoToggle.setAttribute("aria-label", paused ? "Play background video" : "Pause background video");
-    videoToggle.setAttribute("title", paused ? "Play video" : "Pause video");
-    videoToggle.innerHTML = `<i data-lucide="${paused ? "play" : "pause"}" aria-hidden="true"></i>`;
-    refreshIcons();
-  };
-
-  videoToggle?.addEventListener("click", async () => {
-    if (!heroVideo) return;
-    if (heroVideo.paused) {
-      try {
-        await heroVideo.play();
-      } catch (_) {
-        return;
-      }
-    } else {
-      heroVideo.pause();
-    }
-    updateVideoButton();
-  });
-  heroVideo?.addEventListener("play", updateVideoButton);
-  heroVideo?.addEventListener("pause", updateVideoButton);
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    heroVideo?.pause();
+  let active = 'warehouse', local = false;
+  function icons() { if (window.lucide) window.lucide.createIcons(); }
+  function render() {
+    const scene = scenes[active];
+    const file = local ? scene.local : scene.global;
+    const isReplay = scene.video && !local;
+    replay.pause(); replay.hidden = !isReplay; image.hidden = isReplay;
+    if (!isReplay) { image.src = 'assets/' + file; image.alt = local ? scene.localCaption : scene.caption; }
+    $('replay-readout').hidden = !isReplay;
+    $('scene-kind').textContent = isReplay ? 'Exact sampled execution' : 'Recorded static snapshot';
+    $('scene-caption').textContent = local ? scene.localCaption : scene.caption;
+    $('download-view').href = 'assets/' + file;
+    $('global-view').setAttribute('aria-pressed', String(!local));
+    $('local-view').setAttribute('aria-pressed', String(local));
+    $('local-view').disabled = !scene.local;
+    $('scene-panel').setAttribute('aria-labelledby', 'tab-' + active);
+    document.querySelectorAll('[data-scene]').forEach((button) => {
+      const selected = button.dataset.scene === active;
+      button.setAttribute('aria-selected', String(selected)); button.tabIndex = selected ? 0 : -1;
+    });
   }
-
-  const millionViews = {
-    global: {
-      src: "assets/million-global.webp",
-      alt: "One-million-agent global 3D state with a marked local region.",
-      caption: "Exact global state; every cyan point is one occupied agent voxel."
-    },
-    local: {
-      src: "assets/million-local.webp",
-      alt: "Local one-million-agent slice with hummingbird meshes and exact next-step direction markers.",
-      caption: "Representative z-layer: 346 of 347 visible agents move at the next exact step."
-    }
-  };
-
-  qsa("[data-million-view]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const view = millionViews[button.dataset.millionView];
-      if (!view) return;
-      qsa("[data-million-view]").forEach((item) => item.setAttribute("aria-selected", String(item === button)));
-      const image = qs("#million-image");
-      const caption = qs("#million-caption");
-      const imageButton = image?.closest("[data-lightbox-src]");
-      if (image) {
-        image.src = view.src;
-        image.alt = view.alt;
-      }
-      if (caption) caption.textContent = view.caption;
-      if (imageButton) {
-        imageButton.dataset.lightboxSrc = view.src;
-        imageButton.dataset.lightboxAlt = view.alt;
-        imageButton.setAttribute("aria-label", `Open ${button.dataset.millionView} visualization`);
-      }
+  const tabs = [...document.querySelectorAll('[data-scene]')];
+  tabs.forEach((button, index) => {
+    button.addEventListener('click', () => { active = button.dataset.scene; local = false; render(); });
+    button.addEventListener('keydown', (event) => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next !== undefined) { event.preventDefault(); tabs[next].click(); tabs[next].focus(); }
     });
   });
-
-  const activateResultTab = (target) => {
-    qsa("[data-result-tab]").forEach((button) => {
-      const selected = button.dataset.resultTab === target;
-      button.setAttribute("aria-selected", String(selected));
-      button.tabIndex = selected ? 0 : -1;
-    });
-    qsa("[data-result-panel]").forEach((panel) => {
-      panel.hidden = panel.dataset.resultPanel !== target;
-    });
-  };
-
-  qsa("[data-result-tab]").forEach((button, index, buttons) => {
-    button.addEventListener("click", () => activateResultTab(button.dataset.resultTab));
-    button.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-      event.preventDefault();
-      let nextIndex = index;
-      if (event.key === "ArrowLeft") nextIndex = (index - 1 + buttons.length) % buttons.length;
-      if (event.key === "ArrowRight") nextIndex = (index + 1) % buttons.length;
-      if (event.key === "Home") nextIndex = 0;
-      if (event.key === "End") nextIndex = buttons.length - 1;
-      buttons[nextIndex].focus();
-      activateResultTab(buttons[nextIndex].dataset.resultTab);
-    });
-  });
-
-  const lightbox = qs("[data-lightbox]");
-  const lightboxImage = qs("[data-lightbox-image]");
-  let lightboxTrigger = null;
-
-  qsa("[data-lightbox-src]").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (!lightbox || !lightboxImage) return;
-      lightboxTrigger = button;
-      lightboxImage.src = button.dataset.lightboxSrc;
-      lightboxImage.alt = button.dataset.lightboxAlt || "Expanded research figure";
-      lightbox.showModal();
-    });
-  });
-
-  const closeLightbox = () => {
-    if (!lightbox?.open) return;
-    lightbox.close();
-    lightboxImage.removeAttribute("src");
-    lightboxTrigger?.focus();
-  };
-
-  qs("[data-lightbox-close]")?.addEventListener("click", closeLightbox);
-  lightbox?.addEventListener("click", (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
-  lightbox?.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeLightbox();
-  });
-
-  const reveals = qsa(".reveal");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!reducedMotion) document.body.classList.add("motion-ready");
-  if ("IntersectionObserver" in window && !reducedMotion) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-    reveals.forEach((item) => observer.observe(item));
-  } else {
-    reveals.forEach((item) => item.classList.add("is-visible"));
+  $('global-view').addEventListener('click', () => { local = false; render(); });
+  $('local-view').addEventListener('click', () => { local = true; render(); });
+  function updateReadout() {
+    const data = window.REPLAY_DATA;
+    if (!data) return;
+    const frame = data.frames[Math.min(data.frames.length - 1, Math.floor(replay.currentTime * data.fps))];
+    $('step').textContent = frame.step.toLocaleString('en-US');
+    $('arrived').textContent = frame.at_goal.toLocaleString('en-US') + ' / 100,000';
   }
-
-  const sections = qsa("main section[id]");
-  const navLinks = qsa(".site-nav a[href^='#']");
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!visible) return;
-      navLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`));
-    }, { rootMargin: "-20% 0px -65%", threshold: [0.05, 0.2, 0.5] });
-    sections.forEach((section) => sectionObserver.observe(section));
+  replay.addEventListener('timeupdate', updateReadout);
+  replay.addEventListener('seeked', updateReadout);
+  replay.addEventListener('play', () => hero.pause());
+  function heroState() {
+    $('hero-toggle').innerHTML = `<i data-lucide="${hero.paused ? 'play' : 'pause'}"></i>`;
+    const label = hero.paused ? 'Play background' : 'Pause background';
+    $('hero-toggle').setAttribute('aria-label', label); $('hero-toggle').title = label; icons();
   }
-
-  const year = qs("[data-current-year]");
-  if (year) year.textContent = String(new Date().getFullYear());
-
-  refreshIcons();
+  $('hero-toggle').addEventListener('click', async () => {
+    if (hero.paused) { try { await hero.play(); } catch { /* Native poster remains usable. */ } }
+    else hero.pause();
+  });
+  hero.addEventListener('play', heroState); hero.addEventListener('pause', heroState);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { hero.pause(); replay.pause(); } });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) hero.play().catch(() => {});
+  icons(); updateReadout();
 })();
