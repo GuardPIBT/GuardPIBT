@@ -64,7 +64,11 @@
     else hero.pause();
   });
   hero.addEventListener('play', heroState); hero.addEventListener('pause', heroState);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) { hero.pause(); replay.pause(); } });
+  const allVideos = [...document.querySelectorAll('video')];
+  allVideos.forEach(video => video.addEventListener('play', () => {
+    allVideos.forEach(other => { if (other !== video) other.pause(); });
+  }));
+  document.addEventListener('visibilitychange', () => { if (document.hidden) allVideos.forEach(video => video.pause()); });
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) hero.play().catch(() => {});
   icons(); updateReadout();
 })();

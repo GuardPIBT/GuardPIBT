@@ -1,0 +1,56 @@
+{
+  "scope": "NEW 64-agent showcase with exact 3D static potentials and an added hold-only execution adapter; not a paper benchmark, not evidence for unchanged paper algorithm or flight dynamics.",
+  "N": 64,
+  "final_at_goal": 64,
+  "seed": 20260919,
+  "original_solver_steps": 46,
+  "execution_phases": 58,
+  "added_hold_phases": 12,
+  "network_forward_passes": 12,
+  "active_neural_preference_updates": 0,
+  "neural_gain_claim": false,
+  "performance_benchmark": false,
+  "discrete_audit": {
+    "frames": 59,
+    "agents": 64,
+    "vertex_conflicts": 0,
+    "edge_conflicts": 0,
+    "obstacle_hits": 0,
+    "out_of_bounds": 0,
+    "max_step_chebyshev": 1
+  },
+  "linear_segment_audit": {
+    "minimum_center_distance_m": 0.3535533905932738,
+    "required_distance_m": 0.32,
+    "violating_pair_segments": 0,
+    "examples": []
+  },
+  "mesh_body_radius_m": 0.14,
+  "collision_radius_m": 0.16,
+  "video_fps": 24,
+  "video_frames": 349,
+  "source_execution_sha256": "fc036e106eb093249332d7de7c7818394b2cc9601d03edf2f19c13b41e513d65",
+  "retimed_execution_sha256": "3c130d7e7cd7206fba56adfb857aa4d32418f2265c408810e4494db53dd7ee72",
+  "checkpoint_sha256": "6a53af0ecde94ba9a0ae94961979b992993a276f5c2ed4ee005092ad09f77c8e",
+  "map_manifest_sha256": "bc896775d18cddcd09da9535c0e7f7fb35c510f3785ac86c3eb7b196183e2a61",
+  "environment_sha256": "be1247889cee3ce10028ee1ef1066a96728b3c2aa191ad12b51cc3b578fa4ae9",
+  "video_sha256": "1359d61490bb488d5205a898db2aebfd7b848b14ff32adc20195a54e6056d3b4",
+  "renderer_sha256": "40dd538ecdb64f93043f64d0ff95e2f3aee5f9355e0db4d22d1e32235b134169",
+  "denoising": false,
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "349"
+      }
+    ],
+    "format": {
+      "duration": "14.542000"
+    }
+  },
+  "display_time": "0.25 s per retimed phase, a presentation clock, not measured real-time flight",
+  "interpretation": "All agents remain in the scene; cameras naturally occlude some. Original spatial paths are unchanged. Continuously audited linear interpolation; no dynamics or real-flight claim. A zero active-neural count must not be presented as evidence for learned improvement."
+}

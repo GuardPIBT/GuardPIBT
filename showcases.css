@@ -1,0 +1,11 @@
+.new-environments{border-bottom:1px solid var(--line)}
+.environment-films{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.environment-films figure{margin:0;min-width:0}
+.environment-films video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#e1e5e4}
+.environment-films figcaption{padding:16px 0}
+.environment-films h3{margin:0 0 6px;font-size:19px}
+.environment-films figcaption>span{font-size:12px;line-height:1.5;color:var(--muted)}
+.film-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:16px;font-size:12px}
+.film-links a{display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:4px}
+.film-links svg{width:16px;height:16px}
+@media(max-width:850px){.environment-films{grid-template-columns:1fr;gap:28px}}

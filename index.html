@@ -10,6 +10,7 @@
   <title>Large-Scale 3D MAPF | Visual Supplement</title>
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="showcases.css">
   <script defer src="vendor/lucide.min.js"></script>
   <script defer src="replay-data.js"></script>
   <script defer src="site.js"></script>
@@ -18,7 +19,7 @@
 <a class="skip" href="#scenes">Skip to experiments</a>
 <header>
   <a class="brand" href="#top"><i data-lucide="orbit" aria-hidden="true"></i>3D MAPF</a>
-  <nav aria-label="Primary"><a href="#scenes">Scenes</a><a href="#method">Method</a><a href="#record">Record</a></nav>
+  <nav aria-label="Primary"><a href="#showcases">New scenes</a><a href="#scenes">Archive</a><a href="#record">Record</a></nav>
   <span class="anonymous">Anonymous Authors</span>
 </header>
 <main>
@@ -28,6 +29,15 @@
     <div class="hero-caption"><span>100,000 agents / 3D warehouse</span><button class="icon" id="hero-toggle" aria-label="Play background" title="Play background"><i data-lucide="play"></i></button></div>
   </section>
   <div class="fact-band"><div><span>Recorded populations</span><strong>10k / 100k / 1M</strong></div><div><span>Warehouse replay</span><strong>360 exact states</strong></div><div><span>Arrival at final frame</span><strong>100,000 / 100,000</strong></div><a href="#record">Evidence &amp; scope<i data-lucide="arrow-down" aria-hidden="true"></i></a></div>
+
+  <section class="section new-environments" id="showcases">
+    <div class="section-heading"><div><p class="eyebrow">New / Mesh-matched showcases</p><h2>From open grids<br>to built environments.</h2></div><p>Real environment meshes.<br>Recorded, collision-audited motion.</p></div>
+    <div class="environment-films">
+      <figure><video id="alley-replay" controls playsinline muted preload="metadata" poster="assets/alley-poster.webp" aria-label="64-agent urban alley showcase"><source src="assets/alley-replay.mp4" type="video/mp4"></video><figcaption><h3>Urban alley</h3><span>64 agents · Stairs, vegetation &amp; cables</span><div class="film-links"><a href="assets/alley-replay.mp4" download><i data-lucide="download" aria-hidden="true"></i>Video</a><a href="alley-arrivals.csv" download>Arrival trace</a><a href="alley-validation.json" download>Validation</a></div></figcaption></figure>
+      <figure><video id="industrial-replay" controls playsinline muted preload="metadata" poster="assets/industrial-poster.webp" aria-label="64-agent industrial corridor showcase"><source src="assets/industrial-replay.mp4" type="video/mp4"></video><figcaption><h3>Industrial corridor</h3><span>64 agents · Pipe racks, ducts &amp; service carts</span><div class="film-links"><a href="assets/industrial-replay.mp4" download><i data-lucide="download" aria-hidden="true"></i>Video</a><a href="industrial-arrivals.csv" download>Arrival trace</a><a href="industrial-validation.json" download>Validation</a></div></figcaption></figure>
+    </div>
+    <p class="scene-caption">New showcase configurations, not paper benchmark results. Both use exact 3D distance fields and an added hold-only execution schedule; spatial paths are unchanged. All 64 agents reach their goals. Linear segments are audited with 0.16 m body envelopes. These are kinematic replays, not flight-dynamics simulations. The learned provider ran, but its gate made no candidate-order overrides in these cases; no learned-performance gain is claimed.</p>
+  </section>
 
   <section class="section" id="scenes">
     <div class="section-heading"><div><p class="eyebrow">01 / Recorded environments</p><h2>Coordination in context.</h2></div><a class="text-link" href="assets/showcase.mp4" download><i data-lucide="clapperboard" aria-hidden="true"></i>55 s scene reel<i data-lucide="download" aria-hidden="true"></i></a></div>
@@ -47,8 +57,8 @@
 
   <section class="method section" id="method"><div class="section-heading"><div><p class="eyebrow">02 / Method</p><h2>Global context meets<br>discrete execution.</h2></div><p>Neural candidate ordering.<br>Conflict resolution by PIBT.</p></div><img class="architecture" src="assets/architecture.png" alt="Global-local encoder, candidate evaluator, guarded residual and PIBT executor" loading="lazy"><div class="method-columns"><article><span>01</span><h3>Global flow</h3><p>Global transport tokens complement local agent interactions.</p></article><article><span>02</span><h3>Candidate ordering</h3><p>Learned scores influence the order of discrete action candidates.</p></article><article><span>03</span><h3>PIBT execution</h3><p>Priority inheritance, claims, backtracking and anti-swap checks select the joint action.</p></article></div></section>
 
-  <section class="section record" id="record"><div class="section-heading"><div><p class="eyebrow">03 / Evidence</p><h2>The record behind the render.</h2></div><a class="text-link" href="evidence.json" download>Archived run data<i data-lucide="arrow-down-to-line" aria-hidden="true"></i></a></div><div class="record-grid"><div><h3>100k warehouse replay</h3><dl><div><dt>Final arrival</dt><dd>100,000 / 100,000</dd></div><div><dt>Online planning</dt><dd>900.145 s</dd></div><div><dt>Repair planning</dt><dd>8.464 s</dd></div><div><dt>Repair fraction</dt><dd>0.932%</dd></div></dl></div><div><h3>Display &amp; validation</h3><p>Recorded solver coordinates and obstacle geometry are preserved. Lighting and surface materials are presentation changes, not new experiments.</p><p>Replay frames are sampled without synthetic interpolation. Discrete vertex, edge-swap and obstacle checks do not establish continuous-body clearance or real-world flight safety.</p><p>Snapshots are identified separately from execution videos. No generative image synthesis is used.</p></div></div></section>
+  <section class="section record" id="record"><div class="section-heading"><div><p class="eyebrow">03 / Evidence</p><h2>The record behind the render.</h2></div><a class="text-link" href="evidence.json" download>Archived run data<i data-lucide="arrow-down-to-line" aria-hidden="true"></i></a></div><div class="record-grid"><div><h3>100k warehouse replay</h3><dl><div><dt>Final arrival</dt><dd>100,000 / 100,000</dd></div><div><dt>Online planning</dt><dd>900.145 s</dd></div><div><dt>Repair planning</dt><dd>8.464 s</dd></div><div><dt>Repair fraction</dt><dd>0.932%</dd></div></dl></div><div><h3>Display &amp; validation</h3><p>The archived benchmark renders preserve recorded solver coordinates and obstacle geometry. Their lighting and surface changes do not change the reported experiments.</p><p>The archived 100k replay is sampled without interpolation. Its discrete vertex, edge-swap and obstacle checks do not establish continuous-body clearance. The separate 64-agent showcases use certified linear interpolation and additional execution scheduling.</p><p>Snapshots, archived replays and new showcases are identified separately. No generative image synthesis is used. None of these renders demonstrates real-world flight safety.</p></div></div></section>
 </main>
-<footer><span>Anonymous supplementary material</span><span>Surface materials: <a href="https://polyhaven.com/a/concrete_layers" rel="noreferrer">Poly Haven</a> · <a href="https://polyhaven.com/license" rel="noreferrer">CC0</a></span></footer>
+<footer><span>Anonymous supplementary material</span><span>Environment: <a href="https://polyhaven.com/collections/hidden_alley" rel="noreferrer">Hidden Alley</a> · <a href="https://polyhaven.com/a/modular_industrial_pipes_01" rel="noreferrer">Industrial assets</a> · <a href="https://polyhaven.com/license" rel="noreferrer">CC0</a></span></footer>
 </body>
 </html>
