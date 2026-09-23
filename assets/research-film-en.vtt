@@ -1,0 +1,161 @@
+WEBVTT
+
+1
+00:00:00.289 --> 00:00:04.776
+Guard P I B T learned coordination guarded
+execution
+
+2
+00:00:06.276 --> 00:00:10.900
+Local graph attention captures nearby
+interactions Global source-goal
+
+3
+00:00:10.900 --> 00:00:15.308
+transport provides fleet-level context The
+network scores twenty-seven
+
+4
+00:00:15.308 --> 00:00:19.316
+native candidates and a group gate filters
+interventions P I B
+
+5
+00:00:19.316 --> 00:00:21.337
+T still determines the joint action
+
+6
+00:00:22.283 --> 00:00:25.346
+The gate learns from paired rollouts with
+the same starting state
+
+7
+00:00:25.449 --> 00:00:29.524
+and priorities It compares baseline and
+intervention outcomes aligning
+
+8
+00:00:29.524 --> 00:00:31.329
+neural preferences with actual execution
+
+9
+00:00:32.289 --> 00:00:36.240
+At ten thousand agents Forest is two point
+two four times faster
+
+10
+00:00:36.240 --> 00:00:40.760
+than LaGAT Maze is one point five four
+times faster than LaCAM
+
+11
+00:00:41.017 --> 00:00:44.097
+with twenty-nine point five percent lower
+cost Warehouse still
+
+12
+00:00:44.097 --> 00:00:45.068
+shows trade-offs
+
+13
+00:00:50.290 --> 00:00:53.775
+This city showcase contains one hundred
+thousand recorded robot
+
+14
+00:00:53.786 --> 00:00:57.844
+identities The overview establishes the
+scale before the camera
+
+15
+00:00:57.844 --> 00:01:01.936
+reveals local movement around a building
+corner The replay preserves
+
+16
+00:01:02.037 --> 00:01:06.320
+every spatial path and waiting state A
+shared smooth presentation
+
+17
+00:01:06.320 --> 00:01:10.142
+clock softens abrupt phase transitions
+This is a supplementary
+
+18
+00:01:10.142 --> 00:01:13.335
+visualization not real-time flight or a
+new benchmark
+
+19
+00:01:14.289 --> 00:01:17.559
+The industrial-park showcase contains one
+hundred thousand agents
+
+20
+00:01:17.928 --> 00:01:22.158
+The local view reveals detours around a
+building corner Blue lines
+
+21
+00:01:22.247 --> 00:01:26.432
+show recorded past paths all aircraft
+remain present This is a
+
+22
+00:01:26.443 --> 00:01:28.028
+certified partial replay
+
+23
+00:01:38.289 --> 00:01:41.916
+The forest and rock valley provides
+different obstacle geometry
+
+24
+00:01:42.285 --> 00:01:46.492
+The oblique view reveals recorded paths
+around the rock face Spatial
+
+25
+00:01:46.492 --> 00:01:51.113
+paths remain unchanged the replay adds
+waits to maintain center
+
+26
+00:01:51.113 --> 00:01:54.919
+clearance These are supplementary visuals
+not benchmark timing
+
+27
+00:01:54.919 --> 00:01:55.510
+measurements
+
+28
+00:02:02.289 --> 00:02:05.492
+At one hundred thousand agents runtime
+depends strongly on scene
+
+29
+00:02:05.492 --> 00:02:10.079
+structure These environments span two and
+three dimensions Audited
+
+30
+00:02:10.091 --> 00:02:13.305
+runs use one graphics card with CPU
+parallelism
+
+31
+00:02:14.291 --> 00:02:17.634
+The paper reports a million-agent run all
+goals reached in about
+
+32
+00:02:17.644 --> 00:02:21.352
+nine hundred ninety-five seconds with zero
+audited graph violations
+
+33
+00:02:22.289 --> 00:02:26.854
+Global context Counterfactual gating
+Scalable guarded execution
