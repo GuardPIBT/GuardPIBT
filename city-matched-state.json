@@ -1,0 +1,10 @@
+{
+  "frame": 963,
+  "phase": 47,
+  "alpha": 0.5266968053030443,
+  "at_goal": 23301,
+  "moving_agents": 71162,
+  "N": 100000,
+  "positions_sha256": "a53b019574c22e817d9962d56c2ec960b42e079144ba8ab2f483adc9ec04b3a6",
+  "scope": "Supplementary mesh showcase; not benchmark time"
+}
