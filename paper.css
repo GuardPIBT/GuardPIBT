@@ -3,3 +3,5 @@
 .polished-film{border-bottom:1px solid var(--line)}.polished-film>video{display:block;width:100%;aspect-ratio:16/9;background:#111}.new-100k-films{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:32px}.new-100k-films h3{font-size:18px}.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,0)75%)}.hero-caption{z-index:1}.hero-caption>span{padding:5px;background:rgba(255,255,255,.85)}@media(max-width:850px){.new-100k-films{grid-template-columns:1fr}}@media(max-width:650px){.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,0)80%)}}
 
 .hero-media{object-fit:cover!important}@media(max-width:650px){.hero-media{object-position:50% 50%}}@media(max-width:380px){header{gap:10px}.brand{font-size:14px;gap:5px}nav{gap:8px;font-size:10px}}
+
+.archived-film{margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}.archived-film summary{cursor:pointer;font-size:15px}.archived-film video{display:block;width:100%;aspect-ratio:16/9;margin-top:16px}.archived-film>.text-link{margin-top:16px}
