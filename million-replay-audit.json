@@ -1,0 +1,57 @@
+{
+  "N": 1000000,
+  "states": 878,
+  "first_step": 0,
+  "positions_sha256": "3af62e86c2ab7bb1bde1925346c5674440503d68d0e1d10edc4e2135354ff716",
+  "source_artifact_sha256": "192e732b391823662e2397f74406974d35f08a676b867b1bc8da58bc80b074b2",
+  "source_result_sha256": "6406afaa98738d9f07c6cfe164a1de46709fe10bf79b5bcf5a1ee7b7c5aae049",
+  "scene_sha256": "b88e08e27534c13495c84fd8e8c6ee7ba33400355b0dbe3b280da1792ac43037",
+  "checkpoint_sha256": "d6a6a6638d6d7bb0f793d73f96e5b38bdc47ac81a92c24fc032cfff21b085ec4",
+  "discrete_audit": {
+    "out_of_bounds": 0,
+    "obstacle_positions": 0,
+    "duplicate_positions": 0,
+    "non_unit_moves": 0,
+    "edge_swaps": 0
+  },
+  "first_neural_preference_step": 98,
+  "final_at_goal": 1000000,
+  "all_reached": true,
+  "timing_scope": "New run with trajectory capture/export, not a replacement isolated benchmark.",
+  "source_method_wall_s": 1136.6253980980255,
+  "source_execution_wall_s": 1126.5511709479615,
+  "capture_process_wall_s": 1843.8948110160418,
+  "raw_execution": true,
+  "position_interpolation": false,
+  "per_agent_retiming": false,
+  "continuous_body_collision_free_claimed": false,
+  "geometry": "Exact union of archived occupied grid cells; no display-height exaggeration.",
+  "video": {
+    "file": "assets/million-full-raw-20260926.mp4",
+    "sha256": "1ddb4e20922d324e63d15e35eb202522d7809a51d11776f3ab0349a628bca935",
+    "N": 1000000,
+    "frames": 878,
+    "fps": 30,
+    "duration_s": 29.266666666666666,
+    "source_steps": [
+      0,
+      877
+    ],
+    "raw_coordinate_frame_hashes_verified": true,
+    "all_identities_retained": true,
+    "position_interpolation": false,
+    "per_agent_retiming": false,
+    "display": "All agents use point markers at this overview scale; no physical-body safety claim.",
+    "rendered_mesh_agents_range": [
+      0,
+      0
+    ]
+  },
+  "rendering": {
+    "fleet_shadows": false,
+    "physical_flight_simulation": false,
+    "nearby_mesh_radius_cells": 55,
+    "display_height_scale": 1
+  },
+  "playback_clock": "One original discrete solver state per frame at 30 fps."
+}

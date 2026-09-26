@@ -1,0 +1,8 @@
+#million-replay{border-top:1px solid var(--line)}
+#million-replay .film-panel{padding-top:0}
+#million-replay .readout{padding-top:0}
+@media(max-width:650px){
+  header{height:auto;min-height:90px;padding-block:12px;flex-wrap:wrap;gap:12px}
+  header nav{width:100%;justify-content:space-between;gap:12px}
+  #million-replay .section-heading .text-link{margin-top:18px}
+}

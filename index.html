@@ -15,12 +15,12 @@
 <script defer="" src="vendor/lucide.min.js"></script>
 <script defer="" src="replay-data.js"></script>
 <script defer="" src="site.js"></script>
-<link href="paper.css" rel="stylesheet"/><link href="multiview.css?v=20260926" rel="stylesheet"/><script defer="" src="multiview.js?v=20260926"></script></head>
+<link href="paper.css" rel="stylesheet"/><link href="multiview.css?v=20260926" rel="stylesheet"/><script defer="" src="multiview.js?v=20260926"></script><script defer="" src="million-replay-data.js"></script><script defer="" src="million-replay.js"></script><link href="million-replay.css" rel="stylesheet"/></head>
 <body>
 <a class="skip" href="#scenes">Skip to experiments</a>
 <header>
 <a class="brand" href="#top"><i aria-hidden="true" data-lucide="orbit"></i>GuardPIBT</a>
-<nav aria-label="Primary"><a href="#research-film">Film</a><a href="#method">Method</a><a href="#results">Results</a><a href="#record">Evidence</a></nav>
+<nav aria-label="Primary"><a href="#research-film">Film</a><a href="#method">Method</a><a href="#results">Results</a><a href="#record">Evidence</a><a href="#million-replay">1M replay</a></nav>
 <span class="anonymous">Anonymous Authors</span>
 </header>
 <main>
@@ -76,7 +76,39 @@
 <source src="assets/forest-local-2-20260926.mp4" type="video/mp4"/></video>
 <figcaption><div><h3>Southeastern rock corridor</h3><span>16 s / 60 fps / 100,000-agent scene</span></div>
 <a class="film-download" download="" href="assets/forest-local-2-20260926.mp4"><i aria-hidden="true" data-lucide="download"></i>MP4</a>
-</figcaption></figure></div></div></div><p class="scene-caption">Recorded 100,000-agent spatial paths with additional within-step timing adjustments, not unmodified solver execution. These excerpts cover original steps 4-28, before the first neural-ranking update. All identities and original waits are retained; blue tails show past motion. They do not establish neural-module benefit, full-goal completion, or physical flight safety. <a href="video-source-audit.json">Source audit</a></p></section>
+</figcaption></figure></div></div></div><p class="scene-caption">Recorded 100,000-agent spatial paths with additional within-step timing adjustments, not unmodified solver execution. These excerpts cover original steps 4-28, before the first neural-ranking update. All identities and original waits are retained; blue tails show past motion. They do not establish neural-module benefit, full-goal completion, or physical flight safety. <a href="video-source-audit.json">Source audit</a></p></section><section class="section" id="million-replay">
+<div class="section-heading">
+<div><p class="eyebrow">Scale extension / Full recorded execution</p>
+<h2>One million agents.</h2></div>
+<a class="text-link" download="" href="million-replay-audit.json">
+<i aria-hidden="true" data-lucide="file-check"></i>Source audit</a>
+</div>
+<div class="film-panel">
+<figure>
+<video aria-label="One million agents in an oblique city, complete discrete replay" controls="" id="million-video" muted="" playsinline="" poster="assets/million-full-raw-20260926.webp" preload="none">
+<source src="assets/million-full-raw-20260926.mp4" type="video/mp4"/>
+</video>
+<figcaption><div><h3>Oblique city: start to completion</h3>
+<span>29.27 s / 30 fps / Solver steps 0-877</span></div>
+<a class="film-download" download="" href="assets/million-full-raw-20260926.mp4">
+<i aria-hidden="true" data-lucide="download"></i>MP4</a>
+</figcaption>
+</figure>
+</div>
+<div class="readout">
+<div><span>Exact solver step</span><b id="million-step">0</b></div>
+<div><span>Currently at goal</span><b id="million-arrived">0 / 1,000,000</b></div>
+<div><span>Final state</span><b>1,000,000 / 1,000,000</b></div>
+<a download="" href="million-arrivals.csv"><i aria-hidden="true" data-lucide="table-2"></i>Arrival record</a>
+</div>
+<p class="scene-caption">A fresh recording of the archived million-agent deployment, separate from the paper's timing results.
+    Each video frame uses one original solver state. No agent-position interpolation, extra execution schedule,
+    or removal of agent identities. Agents use point markers at this overview scale.
+    Original obstacle geometry and proportions are retained.</p>
+<p class="scene-caption">Time-compressed discrete replay, not real-time flight. All recorded states pass
+    vertex, edge-swap, obstacle-cell, boundary and unit-step checks. These checks do not establish
+    continuous-body clearance or physical flight safety.</p>
+</section>
 <div class="fact-band"><div><span>Recorded populations</span><strong>10k / 100k / 1M</strong></div><div><span>Archived warehouse replay</span><strong>360 exact states</strong></div><div><span>Archived warehouse final arrival</span><strong>100,000 / 100,000</strong></div><a href="#record">Evidence &amp; scope<i aria-hidden="true" data-lucide="arrow-down"></i></a></div>
 <section class="section new-environments" id="showcases">
 <div class="section-heading"><div><p class="eyebrow">New / Mesh-matched showcases</p><h2>From open grids<br/>to built environments.</h2></div><p>Real environment meshes.<br/>Recorded, collision-audited motion.</p></div>
