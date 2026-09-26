@@ -1,0 +1,315 @@
+{
+  "revision": "2026-09-26",
+  "N": 100000,
+  "benchmark_data_modified": false,
+  "scope": "Approved camera-only presentation excerpts; not new benchmark runs or a flight-dynamics simulation.",
+  "trail_policy": "Past-only 1.25-second fading tails, all current-frustum identities, normal mesh occlusion.",
+  "videos": [
+    {
+      "id": "city-overview",
+      "case": "city",
+      "scene_title": "City blocks",
+      "title": "Overview to close-up",
+      "kind": "overview-to-local",
+      "file": "assets/city-overview-20260926.mp4",
+      "poster": "assets/city-overview-20260926.webp",
+      "sha256": "baf45ba9278fb639300b69b41d12776f2858e5ea8eff274e7163a8947b7c00aa",
+      "poster_sha256": "93b2167bb48fce91ad03156d3497b3e55ae07bd8560481d9f44ac79d14b300de",
+      "frames": 1440,
+      "fps": 60,
+      "duration_s": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        0,
+        1439
+      ],
+      "source_original_steps": [
+        4,
+        28.0
+      ],
+      "source_coordinates_sha256": "73e55a3632b6d2b93e0fd8655b9904bad319c1c8e6704c0fd432edefb6703559",
+      "original_solver_coordinates_sha256": "27bebc97ac698aeb60e6c40ec08c6e241db1d899ae4a0f4d5cae82644fc360ef",
+      "scene_sha256": "12b3e93953900f344e8873b14bd7af32fbe182d5051d267174f0c1cabd22ef24",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "industrial-overview",
+      "case": "industrial",
+      "scene_title": "Industrial park",
+      "title": "Overview to close-up",
+      "kind": "overview-to-local",
+      "file": "assets/industrial-overview-20260926.mp4",
+      "poster": "assets/industrial-overview-20260926.webp",
+      "sha256": "732ea60718d277fd3b77350ec1b932eb8c1478c0aa49f17d36ed3a83c045f966",
+      "poster_sha256": "3927ea33c8d7f5ccedc68c3de8ea482a6cc83b41af72e7b405e6847b2a77d516",
+      "frames": 1440,
+      "fps": 60,
+      "duration_s": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        0,
+        1439
+      ],
+      "source_original_steps": [
+        4,
+        28.0
+      ],
+      "source_coordinates_sha256": "69d1f438f9879ac7862d7b8380dde256274c3715135b49fbcc1c8c96ca805bef",
+      "original_solver_coordinates_sha256": "0aed55e66643aebbb476e16ce8422d84ab8d659caa1f6cea2ea470ec289ccf15",
+      "scene_sha256": "fd3a8b845a375ae0aa1cfbacdf669fbdd87c5c44496f61d5e48c3ecb36984db4",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "forest-overview",
+      "case": "forest",
+      "scene_title": "Forest and rock valley",
+      "title": "Overview to close-up",
+      "kind": "overview-to-local",
+      "file": "assets/forest-overview-20260926.mp4",
+      "poster": "assets/forest-overview-20260926.webp",
+      "sha256": "feb73e1637cd5dfa121b2b81d4477009eb3a144cb36cca94450270a0cd44e5a7",
+      "poster_sha256": "b37e5e0745d13f0e7c3720a40250667b82d49043eb0feccdc8eccadc61305647",
+      "frames": 1440,
+      "fps": 60,
+      "duration_s": 24,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        0,
+        1439
+      ],
+      "source_original_steps": [
+        4,
+        28.0
+      ],
+      "source_coordinates_sha256": "c5d4c78ac02311768449859b59ce695fb850212d1525ad8bb4008a8640d5174d",
+      "original_solver_coordinates_sha256": "735e7072537e5aa3f6381231d19932f514614dd9da61f86a914215d3ba8f94c4",
+      "scene_sha256": "143467e11ee226fa907ff5d72c126cda015bd7ba3710d4a6cf1112d7765a5f29",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "city-local-1",
+      "case": "city",
+      "scene_title": "City blocks",
+      "title": "East block corner",
+      "kind": "spatial-local",
+      "file": "assets/city-local-1-20260926.mp4",
+      "poster": "assets/city-local-1-20260926.webp",
+      "sha256": "8fe3b6a9f079b44f8ebb51e8c4b726021ce4d0c7127aff370c3d0ad56b372513",
+      "poster_sha256": "47910de16aa8cf9db090c45b5bf6387774e775fce140aee21784ecdea3a7e15a",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "73e55a3632b6d2b93e0fd8655b9904bad319c1c8e6704c0fd432edefb6703559",
+      "original_solver_coordinates_sha256": "27bebc97ac698aeb60e6c40ec08c6e241db1d899ae4a0f4d5cae82644fc360ef",
+      "scene_sha256": "12b3e93953900f344e8873b14bd7af32fbe182d5051d267174f0c1cabd22ef24",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "city-local-2",
+      "case": "city",
+      "scene_title": "City blocks",
+      "title": "West block passage",
+      "kind": "spatial-local",
+      "file": "assets/city-local-2-20260926.mp4",
+      "poster": "assets/city-local-2-20260926.webp",
+      "sha256": "ac89527b9e79262dba4110710b3110053201e9b0900b5970d71542ab27de4503",
+      "poster_sha256": "a7ab85f3d2b253bb5fdcc93f497382d5aa9665ddf27ef0b3293b82d2011d24bc",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "73e55a3632b6d2b93e0fd8655b9904bad319c1c8e6704c0fd432edefb6703559",
+      "original_solver_coordinates_sha256": "27bebc97ac698aeb60e6c40ec08c6e241db1d899ae4a0f4d5cae82644fc360ef",
+      "scene_sha256": "12b3e93953900f344e8873b14bd7af32fbe182d5051d267174f0c1cabd22ef24",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "industrial-local-1",
+      "case": "industrial",
+      "scene_title": "Industrial park",
+      "title": "Factory frontage",
+      "kind": "spatial-local",
+      "file": "assets/industrial-local-1-20260926.mp4",
+      "poster": "assets/industrial-local-1-20260926.webp",
+      "sha256": "f934ef9073b0e4b362c35ca5696aa2f1aae12095d87dc4508ac55b2c365dea39",
+      "poster_sha256": "616dbd4caf1702264c437f78a0c1daa0e017c633663227d5e8584a5873c99226",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "69d1f438f9879ac7862d7b8380dde256274c3715135b49fbcc1c8c96ca805bef",
+      "original_solver_coordinates_sha256": "0aed55e66643aebbb476e16ce8422d84ab8d659caa1f6cea2ea470ec289ccf15",
+      "scene_sha256": "fd3a8b845a375ae0aa1cfbacdf669fbdd87c5c44496f61d5e48c3ecb36984db4",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "industrial-local-2",
+      "case": "industrial",
+      "scene_title": "Industrial park",
+      "title": "Processing silos",
+      "kind": "spatial-local",
+      "file": "assets/industrial-local-2-20260926.mp4",
+      "poster": "assets/industrial-local-2-20260926.webp",
+      "sha256": "0f4cf9fa3e3093e5084e157968fa94a16a51da40cd3c1a324c1ad367edad6279",
+      "poster_sha256": "0434a0ab0249a45b6c0df690c230e01990d303d39910d3cc9e1835d98eb324fd",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "69d1f438f9879ac7862d7b8380dde256274c3715135b49fbcc1c8c96ca805bef",
+      "original_solver_coordinates_sha256": "0aed55e66643aebbb476e16ce8422d84ab8d659caa1f6cea2ea470ec289ccf15",
+      "scene_sha256": "fd3a8b845a375ae0aa1cfbacdf669fbdd87c5c44496f61d5e48c3ecb36984db4",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "forest-local-1",
+      "case": "forest",
+      "scene_title": "Forest and rock valley",
+      "title": "Northern rock passage",
+      "kind": "spatial-local",
+      "file": "assets/forest-local-1-20260926.mp4",
+      "poster": "assets/forest-local-1-20260926.webp",
+      "sha256": "be7ec22fb3059e16aeb6283f6dd947d339ea6b9b698a0b6312eea1de4c86bb90",
+      "poster_sha256": "a59bfc0ffc18bf985bf396797b1a67fb7a83912c6d7b27f1c1b400640c082be7",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "c5d4c78ac02311768449859b59ce695fb850212d1525ad8bb4008a8640d5174d",
+      "original_solver_coordinates_sha256": "735e7072537e5aa3f6381231d19932f514614dd9da61f86a914215d3ba8f94c4",
+      "scene_sha256": "143467e11ee226fa907ff5d72c126cda015bd7ba3710d4a6cf1112d7765a5f29",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    },
+    {
+      "id": "forest-local-2",
+      "case": "forest",
+      "scene_title": "Forest and rock valley",
+      "title": "Southeastern rock corridor",
+      "kind": "spatial-local",
+      "file": "assets/forest-local-2-20260926.mp4",
+      "poster": "assets/forest-local-2-20260926.webp",
+      "sha256": "ae56a1442b58bc22e132777e3f4dc96f2ac8e631297e5f49d1e939e7d98390dc",
+      "poster_sha256": "c5c2668c32c02f1abb50c09cec2a42bdc0cc793a55f91d56216a161106a1640d",
+      "frames": 960,
+      "fps": 60,
+      "duration_s": 16,
+      "resolution": [
+        1280,
+        720
+      ],
+      "source_frames": [
+        240,
+        1199
+      ],
+      "source_original_steps": [
+        8.002779708130646,
+        23.997220291869354
+      ],
+      "source_coordinates_sha256": "c5d4c78ac02311768449859b59ce695fb850212d1525ad8bb4008a8640d5174d",
+      "original_solver_coordinates_sha256": "735e7072537e5aa3f6381231d19932f514614dd9da61f86a914215d3ba8f94c4",
+      "scene_sha256": "143467e11ee226fa907ff5d72c126cda015bd7ba3710d4a6cf1112d7765a5f29",
+      "all_100000_bodies_retained": true,
+      "original_waits_preserved": true,
+      "replay_changed_relative_to_approved_local": false,
+      "continuous_clearance_violations": 0,
+      "duplicate_adjacent_frames": 0
+    }
+  ]
+}
