@@ -1,0 +1,204 @@
+{
+  "scope": "Three published 100k scenes; source-data check, not solver reproduction.",
+  "cases": [
+    {
+      "case": "city",
+      "N": 100000,
+      "raw_states": 501,
+      "source_positions_sha256": "27bebc97ac698aeb60e6c40ec08c6e241db1d899ae4a0f4d5cae82644fc360ef",
+      "replay_positions_sha256": "73e55a3632b6d2b93e0fd8655b9904bad319c1c8e6704c0fd432edefb6703559",
+      "source_original_steps": [
+        4,
+        28
+      ],
+      "first_neural_preference_applied_step": 101,
+      "neural_preference_applied_within_clip": false,
+      "final_at_goal_at_step_500": 95261,
+      "termination_reason": "max_steps",
+      "freshly_verified": {
+        "artifact_equals_raw_recording": true,
+        "task_start_matches": true,
+        "all_replay_step_endpoints_equal_solver": true,
+        "agent_order_preserved": true,
+        "original_waits_preserved": true,
+        "checked_agent_steps": 2400000,
+        "planner_wait_agent_steps": 75133,
+        "maximum_edge_deviation_cells": 8.90096028649534e-06,
+        "equals_unmodified_uniform_interpolation": false
+      },
+      "archived_discrete_audit": {
+        "out_of_bounds": 0,
+        "obstacle_positions": 0,
+        "duplicate_positions": 0,
+        "non_unit_moves": 0,
+        "edge_swaps": 0
+      },
+      "archived_raw_first_unsafe_transition": {
+        "step": 0,
+        "candidate_pairs": 252753,
+        "violating_pair_segments": 999,
+        "minimum_candidate_distance_cells": 0.0,
+        "examples": [
+          {
+            "agents": [
+              1563,
+              84887
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              6410,
+              55060
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              37282,
+              71606
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          }
+        ]
+      },
+      "archived_replay_violating_pair_segments": 0
+    },
+    {
+      "case": "industrial",
+      "N": 100000,
+      "raw_states": 501,
+      "source_positions_sha256": "0aed55e66643aebbb476e16ce8422d84ab8d659caa1f6cea2ea470ec289ccf15",
+      "replay_positions_sha256": "69d1f438f9879ac7862d7b8380dde256274c3715135b49fbcc1c8c96ca805bef",
+      "source_original_steps": [
+        4,
+        28
+      ],
+      "first_neural_preference_applied_step": 333,
+      "neural_preference_applied_within_clip": false,
+      "final_at_goal_at_step_500": 95563,
+      "termination_reason": "max_steps",
+      "freshly_verified": {
+        "artifact_equals_raw_recording": true,
+        "task_start_matches": true,
+        "all_replay_step_endpoints_equal_solver": true,
+        "agent_order_preserved": true,
+        "original_waits_preserved": true,
+        "checked_agent_steps": 2400000,
+        "planner_wait_agent_steps": 41498,
+        "maximum_edge_deviation_cells": 1.71661376953125e-05,
+        "equals_unmodified_uniform_interpolation": false
+      },
+      "archived_discrete_audit": {
+        "out_of_bounds": 0,
+        "obstacle_positions": 0,
+        "duplicate_positions": 0,
+        "non_unit_moves": 0,
+        "edge_swaps": 0
+      },
+      "archived_raw_first_unsafe_transition": {
+        "step": 0,
+        "candidate_pairs": 186823,
+        "violating_pair_segments": 760,
+        "minimum_candidate_distance_cells": 0.0,
+        "examples": [
+          {
+            "agents": [
+              16410,
+              40176
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              41027,
+              88172
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              37888,
+              87836
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          }
+        ]
+      },
+      "archived_replay_violating_pair_segments": 0
+    },
+    {
+      "case": "forest",
+      "N": 100000,
+      "raw_states": 501,
+      "source_positions_sha256": "735e7072537e5aa3f6381231d19932f514614dd9da61f86a914215d3ba8f94c4",
+      "replay_positions_sha256": "c5d4c78ac02311768449859b59ce695fb850212d1525ad8bb4008a8640d5174d",
+      "source_original_steps": [
+        4,
+        28
+      ],
+      "first_neural_preference_applied_step": 36,
+      "neural_preference_applied_within_clip": false,
+      "final_at_goal_at_step_500": 85772,
+      "termination_reason": "max_steps",
+      "freshly_verified": {
+        "artifact_equals_raw_recording": true,
+        "task_start_matches": true,
+        "all_replay_step_endpoints_equal_solver": true,
+        "agent_order_preserved": true,
+        "original_waits_preserved": true,
+        "checked_agent_steps": 2400000,
+        "planner_wait_agent_steps": 80318,
+        "maximum_edge_deviation_cells": 1.71661376953125e-05,
+        "equals_unmodified_uniform_interpolation": false
+      },
+      "archived_discrete_audit": {
+        "out_of_bounds": 0,
+        "obstacle_positions": 0,
+        "duplicate_positions": 0,
+        "non_unit_moves": 0,
+        "edge_swaps": 0
+      },
+      "archived_raw_first_unsafe_transition": {
+        "step": 0,
+        "candidate_pairs": 255724,
+        "violating_pair_segments": 1030,
+        "minimum_candidate_distance_cells": 0.0,
+        "examples": [
+          {
+            "agents": [
+              16258,
+              83764
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              58000,
+              80992
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          },
+          {
+            "agents": [
+              6274,
+              73596
+            ],
+            "tau": 0.5,
+            "distance_cells": 0.0
+          }
+        ]
+      },
+      "archived_replay_violating_pair_segments": 0
+    }
+  ],
+  "limitation": "Raw discrete checks do not imply continuous safety. Extra per-agent within-step scheduling was used for display. Not a new benchmark."
+}
