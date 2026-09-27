@@ -3,15 +3,15 @@
   "N": 64,
   "final_at_goal": 64,
   "seed": 20260919,
-  "original_solver_steps": 36,
-  "execution_phases": 47,
-  "added_hold_phases": 11,
-  "network_forward_passes": 9,
+  "original_solver_steps": 46,
+  "execution_phases": 58,
+  "added_hold_phases": 12,
+  "network_forward_passes": 12,
   "active_neural_preference_updates": 0,
   "neural_gain_claim": false,
   "performance_benchmark": false,
   "discrete_audit": {
-    "frames": 48,
+    "frames": 59,
     "agents": 64,
     "vertex_conflicts": 0,
     "edge_conflicts": 0,
@@ -27,15 +27,20 @@
   },
   "mesh_body_radius_m": 0.14,
   "collision_radius_m": 0.16,
-  "video_fps": 24,
-  "video_frames": 283,
-  "source_execution_sha256": "acbb5e655ab9af751940cacfa0f88ee0078d52b02b9a4af2d54b89cefbac92c5",
-  "retimed_execution_sha256": "df982b234b81e0c86e29bb4e8ea01563fc644f8e19425702283c3070f4a78269",
+  "video_fps": 60,
+  "video_frames": 1393,
+  "source_execution_sha256": "fc036e106eb093249332d7de7c7818394b2cc9601d03edf2f19c13b41e513d65",
+  "retimed_execution_sha256": "3c130d7e7cd7206fba56adfb857aa4d32418f2265c408810e4494db53dd7ee72",
   "checkpoint_sha256": "6a53af0ecde94ba9a0ae94961979b992993a276f5c2ed4ee005092ad09f77c8e",
-  "map_manifest_sha256": "7c012e3878ab7dac62ef7c59033688385db8152f9b6b442281867aef6999e177",
-  "environment_sha256": "2662f7e4b62b086db8f7acc29a77986d2f937e4222e0ced7e405c998a81400c1",
-  "video_sha256": "97cbdc86523275133cdce044632c1312438153a75441bad8577d54ed363f35ba",
-  "renderer_sha256": "91025781af79e400813c7f1c3d142217a5d4102911a346776faa78d87f2125ab",
+  "map_manifest_sha256": "bc896775d18cddcd09da9535c0e7f7fb35c510f3785ac86c3eb7b196183e2a61",
+  "environment_sha256": "be1247889cee3ce10028ee1ef1066a96728b3c2aa191ad12b51cc3b578fa4ae9",
+  "video_sha256": "3213a0d942db26f78ec746b775ad2e8b361887d8498dbe8a1d37eb0b8542060b",
+  "renderer_sha256": "48034e99f5a2f14509c62398432a61b6f5b5b39d6ae50ced643ab480f5808070",
+  "encoder_sha256": "b10668d6cc81ee680c4a2179bf47bb8846fde2861d1789496e71c81720337e2c",
+  "encoding": {
+    "codec": "libx264",
+    "crf": 14
+  },
   "denoising": false,
   "probe": {
     "programs": [],
@@ -43,14 +48,17 @@
       {
         "width": 1280,
         "height": 720,
-        "r_frame_rate": "24/1",
-        "nb_frames": "283"
+        "r_frame_rate": "60/1",
+        "nb_frames": "1393"
       }
     ],
     "format": {
-      "duration": "11.792000"
+      "duration": "23.216667"
     }
   },
-  "display_time": "0.25 s per retimed phase, a presentation clock, not measured real-time flight",
+  "frames_per_phase": 24,
+  "display_time": "0.4 s per retimed phase, a presentation clock, not measured real-time flight",
+  "orientation": "continuous shortest-angle yaw, hold previous heading while waiting",
+  "orientation_source_sha256": "d6a7906f8bdfa4e5937474c1cdd35e79b98181270f4929eaba43269747e25030",
   "interpretation": "All agents remain in the scene; cameras naturally occlude some. Original spatial paths are unchanged. Continuously audited linear interpolation; no dynamics or real-flight claim. A zero active-neural count must not be presented as evidence for learned improvement."
 }
