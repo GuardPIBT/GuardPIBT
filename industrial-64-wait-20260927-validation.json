@@ -1,0 +1,84 @@
+{
+  "scope": "NEW 64-agent showcase with exact 3D static potentials and an added hold-only execution adapter; not a paper benchmark, not evidence for unchanged paper algorithm or flight dynamics.",
+  "N": 64,
+  "final_at_goal": 64,
+  "seed": 20260919,
+  "original_solver_steps": 36,
+  "execution_phases": 47,
+  "added_hold_phases": 11,
+  "network_forward_passes": 9,
+  "active_neural_preference_updates": 0,
+  "neural_gain_claim": false,
+  "performance_benchmark": false,
+  "discrete_audit": {
+    "frames": 48,
+    "agents": 64,
+    "vertex_conflicts": 0,
+    "edge_conflicts": 0,
+    "obstacle_hits": 0,
+    "out_of_bounds": 0,
+    "max_step_chebyshev": 1
+  },
+  "linear_segment_audit": {
+    "minimum_center_distance_m": 0.3535533905932738,
+    "required_distance_m": 0.32,
+    "violating_pair_segments": 0,
+    "examples": []
+  },
+  "mesh_body_radius_m": 0.14,
+  "collision_radius_m": 0.16,
+  "video_fps": 60,
+  "video_frames": 1129,
+  "source_execution_sha256": "acbb5e655ab9af751940cacfa0f88ee0078d52b02b9a4af2d54b89cefbac92c5",
+  "retimed_execution_sha256": "df982b234b81e0c86e29bb4e8ea01563fc644f8e19425702283c3070f4a78269",
+  "checkpoint_sha256": "6a53af0ecde94ba9a0ae94961979b992993a276f5c2ed4ee005092ad09f77c8e",
+  "map_manifest_sha256": "7c012e3878ab7dac62ef7c59033688385db8152f9b6b442281867aef6999e177",
+  "environment_sha256": "2662f7e4b62b086db8f7acc29a77986d2f937e4222e0ced7e405c998a81400c1",
+  "video_sha256": "6b2c7edff4f15f3f9d4830166af5864686d340d61195ab122add7ec05e4b3d34",
+  "renderer_sha256": "48034e99f5a2f14509c62398432a61b6f5b5b39d6ae50ced643ab480f5808070",
+  "encoder_sha256": "39b4310116def5d217e27640d8237e3eadafda481f4bb1d18044f7644df2381f",
+  "encoding": {
+    "codec": "libx264",
+    "crf": 8
+  },
+  "denoising": false,
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 816,
+        "r_frame_rate": "60/1",
+        "nb_frames": "1129"
+      }
+    ],
+    "format": {
+      "duration": "18.816667"
+    }
+  },
+  "frames_per_phase": 24,
+  "display_time": "0.4 s per retimed phase, a presentation clock, not measured real-time flight",
+  "orientation": "continuous shortest-angle yaw, hold previous heading while waiting",
+  "orientation_source_sha256": "d6a7906f8bdfa4e5937474c1cdd35e79b98181270f4929eaba43269747e25030",
+  "interpretation": "All agents remain in the scene; cameras naturally occlude some. Original spatial paths are unchanged. Continuously audited linear interpolation; no dynamics or real-flight claim. A zero active-neural count must not be presented as evidence for learned improvement.",
+  "previous_video_sha256": "577ce15779ce97a667014119b5ee435a887c6ee1b7afc0202299b4ad0fdf18d7",
+  "parent_encoder_sha256": "b10668d6cc81ee680c4a2179bf47bb8846fde2861d1789496e71c81720337e2c",
+  "presentation": {
+    "original_frames_preserved": true,
+    "positions_and_waits_unchanged": true,
+    "frame_clock_unchanged": true,
+    "top_readout_added_without_cropping": true,
+    "moving": "Nonzero recorded segment, including vertical travel, and not at goal.",
+    "waiting": "Zero displacement and not at goal. Added hold-only scheduling in these two showcases.",
+    "at_goal": "Recorded position equals that agent's goal.",
+    "markers": "Amber rings are UI indicators, not physical body sizes. Only environment-visible, nonoverlapping hold markers are drawn; counts include all 64 agents.",
+    "pulses": "UI-only animation; aircraft positions are untouched.",
+    "clock": "Playback time only, neither measured compute time nor physical flight time.",
+    "renderer_source_sha256": "39b4310116def5d217e27640d8237e3eadafda481f4bb1d18044f7644df2381f",
+    "state_source_sha256": "16556270225d691654c4524e6ec8fbcd47a1aaa811d05601bdb297d8dc9ae659",
+    "projection_sha256": "ee1ef8bd1531cda86309e0c037d6b43459f4deb133c0cfc80b567690ee1eac5e",
+    "original_render_manifest_sha256": "7cf79d650bc524dc810d1aec37d45a19a1c03df01222c8ed03d3ee996819403a",
+    "states_every_frame_sha256": "4d65543181965ab46104af1dee5f8e57092fee319b7aa2048471865edfd060fa",
+    "verification_source_sha256": "ebe1e32b8c2f41b65c07583cadae6223c2e038cdf5c5060946946ec39e72439c"
+  }
+}
